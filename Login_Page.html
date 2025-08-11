@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Kriya Enterprise</title>
+  <link rel="stylesheet" href="/Login_Page.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Kriya Enterprise</h2>
+    <p class="title">Helps you connect and share with the people in your life.</p>
+
+    <!-- LOGIN FORM -->
+    <div id="loginBox">
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="username">The email address or mobile number</label>
+          <input type="text" id="username" autocomplete="username" />
+          <span class="error-message" id="usernameError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" autocomplete="current-password" />
+          <div class="toggle-password" onclick="togglePassword()">Show Password</div>
+          <span class="error-message" id="passwordError"></span>
+        </div>
+
+        <button type="submit">Log in</button>
+        <div class="link" style="margin-top: 10px;">
+          <a href="#" onclick="goToForgotPassword()">Forgotten password?</a>
+        </div>
+      </form>
+      <div class="link" style="margin-top: 15px;">
+        <a href="#" onclick="goToRegister()">Create new account</a>
+      </div>
+    </div>
+
+    <!-- FORGOT PASSWORD FORM -->
+    <div id="forgotPasswordBox" style="display: none;">
+      <form id="forgotForm" novalidate>
+        <p class="title">Find Your Account</p>
+        <p>Please enter your email address or mobile number to search for your account.</p>
+
+        <div class="form-group">
+          <input type="text" id="search" autocomplete="email" />
+          <span class="error-message" id="searchError"></span>
+          <p id="searchMessage" style="margin-top: 10px; font-weight: bold;"></p>
+        </div>
+
+        <button type="submit">Search</button>
+        <div class="link" style="margin-top: 10px;">
+          <a href="#" onclick="goToLogin()">Cancel</a>
+        </div>
+      </form>
+      <div class="link" style="margin-top: 10px;">
+        <a href="#" onclick="goToLogin()">Email or phone | Password | Forgotten account?</a>
+      </div>
+    </div>
+
+    <!-- SUCCESS PAGE -->
+    <div class="success-page" id="successPage" style="display:none;">
+      <h2>Login successful!</h2>
+      <p>Welcome to your dashboard. You have successfully logged in. Explore and enjoy the features available to you.</p>
+      <div class="link" style="margin-top: 20px;">
+        <a href="#" onclick="goToLogin()">Back to Login</a>
+      </div>
+    </div>
+
+    <!-- REGISTRATION FORM -->
+    <div id="registerBox" style="display:none;" class="form-box">
+      <h2>Create New Account</h2>
+      <p class="title">Join Kriya Enterprise and start connecting today!</p>
+      
+      <form id="registerForm" novalidate>
+        <div class="form-group">
+          <label for="regName">Full Name</label>
+          <input type="text" id="regName" placeholder="Enter your full name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="regEmail">Email or Mobile Number</label>
+          <input type="text" id="regEmail" placeholder="Enter email or mobile number" required />
+          <span class="error-message" id="registerError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="regPassword">Password</label>
+          <input type="password" id="regPassword" placeholder="Enter password" required />
+        </div>
+
+        <button type="submit">Sign Up</button>
+      </form>
+
+      <div class="link" style="margin-top: 15px;">
+        <a href="#" onclick="goToLogin()">Already have an account? Log in</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/Login_Page.js"></script>
+</body>
+</html>
